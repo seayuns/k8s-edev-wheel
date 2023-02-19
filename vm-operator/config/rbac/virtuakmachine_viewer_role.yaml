@@ -1,0 +1,27 @@
+# permissions for end users to view virtuakmachines.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: virtuakmachine-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: vm-operator
+    app.kubernetes.io/part-of: vm-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: virtuakmachine-viewer-role
+rules:
+- apiGroups:
+  - cloud.seayun.com
+  resources:
+  - virtuakmachines
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - cloud.seayun.com
+  resources:
+  - virtuakmachines/status
+  verbs:
+  - get

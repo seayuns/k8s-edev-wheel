@@ -1,0 +1,12 @@
+apiVersion: cloud.seayun.com/v1
+kind: VirtuakMachine
+metadata:
+  labels:
+    app.kubernetes.io/name: virtuakmachine
+    app.kubernetes.io/instance: virtuakmachine-sample
+    app.kubernetes.io/part-of: vm-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: vm-operator
+  name: virtuakmachine-sample
+spec:
+  # TODO(user): Add fields here
